@@ -1,0 +1,47 @@
+# Val's theme for macchina
+
+separator="❯"
+separator_color="yellow"
+key_color="yellow"
+prefer_small_ascii = false
+
+[palette]
+type="Dark"
+visible=true
+glyph=" ⬤ "
+
+[box]
+title="[ VAL ]"
+border="single"
+visible=true
+
+[bar]
+glyph=" "
+hide_delimiters=true
+visible=true
+
+[randomize]
+key_color=false
+separator_color=false
+
+[custom_ascii]
+color="yellow"
+path="~/.config/macchina/themes/ascii-mac.txt"
+
+[keys]
+host=" host"
+machine=" machine"
+uptime=" uptime"
+kernel=" kernel"
+distro=" distro"
+packages=" packages"
+os=" os"
+de=" de"
+wm=" wm"
+terminal=" terminal"
+resolution=" resolution"
+shell=" shell"
+cpu=" cpu"
+cpu_load=" cpu load"
+memory=" memory"
+battery=" battery"
