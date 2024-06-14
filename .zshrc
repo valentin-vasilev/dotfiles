@@ -80,8 +80,6 @@ alias gp="git push"
 alias gc="git commit -s -S"
 alias gs="git status"
 
-## git bare for dot files
-alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 ## chrome
 alias chrome="open -a \"Google Chrome\""
