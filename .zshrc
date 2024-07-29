@@ -100,6 +100,9 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Add spicetify to $PATH
 export PATH=$PATH:/Users/vsvasilev/.spicetify
 
+# Add docker cli to $PATH
+export PATH=$PATH:/Applications/Docker.app/Contents/Resources/bin
+
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
@@ -172,6 +175,9 @@ export EDITOR=$(which nvim)
 
 # GPG TTY
 export GPG_TTY=$TTY
+
+# TERM
+export TERM=tmux-256color
 
 
 complete -o nospace -C /opt/homebrew/Cellar/tfenv/3.0.0/versions/1.7.0/terraform terraform
