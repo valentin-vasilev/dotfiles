@@ -1,6 +1,5 @@
 .config/scripts
 .config/wireshark
 .config/github-copilot
-.config/na 
-.config/spicetify
 .config/gh
+.config/spaceship.zsh.zwc
