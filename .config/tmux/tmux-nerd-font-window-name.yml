@@ -1,0 +1,13 @@
+config:
+  fallback-icon: " " # icon to use if no definition is found
+  show-name: false # show the window name with the icon
+  multi-pane-icon: "󱡓 " # show when window has multiple panes (blank by default)
+  icon-position: "left" # show the icon to the "left" or "right" of the window name (defaults to left)
+
+icons:
+  zsh: " " 
+  ssh: " "
+  python: " "
+  nvim: " "
+  cmatrix: " " 
+  lf: " "
