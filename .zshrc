@@ -66,6 +66,9 @@ alias c="clear"
 ## kubectl
 alias k="kubectl"
 
+# homebrew install apps
+alias apps="xargs brew install < $HOME/dotfiles/apps"
+
 ## file listing
 alias ls="ls --color=always"
 alias ll="ls -lF -G"

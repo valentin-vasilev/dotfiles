@@ -1,2 +1,5 @@
 \.DS_Store
-\icons
+icons
+\.gitignore
+.git
+\apps
