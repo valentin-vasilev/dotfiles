@@ -168,7 +168,7 @@ SPACESHIP_KUBECTL_SYMBOL="󱃾 "       # Symbol displayed before the section
 SPACESHIP_KUBECTL_VERSION_SHOW=true       # Show kubectl version
 SPACESHIP_KUBECTL_VERSION_ASYNC=true      # Render section asynchronously
 SPACESHIP_KUBECTL_VERSION_PREFIX=""       # Section's prefix
-SPACESHIP_KUBECTL_VERSION_SUFFIX=""       # Section's suffix
+SPACESHIP_KUBECTL_VERSION_SUFFIX=" "      # Section's suffix
 SPACESHIP_KUBECTL_VERSION_COLOR="907aa9"  # Section's color
 
 SPACESHIP_KUBECTL_CONTEXT_SHOW=true             # Show kubectl context

@@ -13,6 +13,12 @@ complete -C $(which aws_completer) aws
 # az autocompletion
 complete -C '/opt/homebrew/etc/bash_completion.d/az' az
 
+# kubectl autocompletion
+source <(kubectl completion zsh)
+
+# k9s config dir
+export K9S_CONFIG_DIR="$HOME/.config/k9s"
+
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 # zsh fzf tab completion
@@ -56,6 +62,9 @@ alias sz="source ~/.zshrc"
 
 ## clear screen
 alias c="clear"
+
+## kubectl
+alias k="kubectl"
 
 ## file listing
 alias ls="ls --color=always"
