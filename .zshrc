@@ -111,6 +111,9 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Add docker cli to $PATH
 export PATH=$PATH:/Applications/Docker.app/Contents/Resources/bin
 
+# Add SAP hdbsql to $PATH
+export PATH=$PATH:/Applications/sap/hdbclient
+
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
