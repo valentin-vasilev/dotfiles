@@ -42,6 +42,10 @@ source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 # spaceship prompt
 source $(brew --prefix)/opt/spaceship/spaceship.zsh
 
+#bindkey
+bindkey '^f'   vi-forward-word
+bindkey '^b'   backward-word
+
 # zsh 
 ## set zsh history file and size
 export HISTFILE=~/.zsh_history
