@@ -63,7 +63,7 @@ return {
 				Visual = { fg = "base", bg = "iris" },
 				VisualNC = { fg = "base", bg = "iris" },
 				-- Search highlight colors
-				Search = { fg = "overlay", bg = "iris" },
+				Search = { fg = "overlay", bg = "foam" },
 				IncSearch = { fg = "overlay", bg = "foam" },
 				CurSearch = { fg = "overlay", bg = "foam" },
 				-- Telescope color settings
@@ -81,6 +81,11 @@ return {
 				RenderMarkdownCode = { fg = "pine", bg = "highlight_high", italic = true },
 				-- Navic highlight colors
 				NavicText = { fg = "pine", bg = "none" },
+				-- Remove background for git signs highlight groups
+				SignColumn = { bg = "none" },
+				GitSignsAdd = { bg = "none" },
+				GitSignsChange = { bg = "none" },
+				GitSignsDelete = { bg = "none" },
 			},
 		})
 		vim.cmd.colorscheme("rose-pine")

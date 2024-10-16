@@ -7,9 +7,9 @@ return {
 		require("breadcrumbs").setup({
 			auto_enable = true,
 			icons = {
-				default = "",
-				git = "",
-				home = "",
+				default = " ",
+				git = " ",
+				home = " ",
 			},
 			separator = " > ",
 		})
