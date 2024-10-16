@@ -5,12 +5,15 @@ derailed/k9s/k9s
 fd
 fzf
 gh
+gardener/tap/gardenlogin
 git
 go
 helm
+int128/kubelogin/kubelogin
 kind
 kubernetes-cli
 kustomize
+lfadsads
 neovim
 node
 pyenv
