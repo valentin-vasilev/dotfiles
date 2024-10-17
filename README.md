@@ -22,3 +22,7 @@ This is in beta and will always remain like that. I'm constantly adding improvem
 - Tiling window manager (MacOS): [amethyst](https://github.com/ianyh/Amethyst)
 - File manager: [yazi](https://github.com/sxyazi/yazi)
 - Symlink manager: [stow](https://www.gnu.org/software/stow/)
+
+## Theme
+
+[Rose Pine Dawn](https://rosepinetheme.com/themes/)
