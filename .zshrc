@@ -141,31 +141,38 @@ export FZF_DEFAULT_OPTS="
   --layout=reverse \
   --border=rounded \
   --padding 2% \
-  --no-info \
+  --info=inline \
   --no-separator \
   --multi \
   --scroll-off=2 \
   --no-scrollbar \
   --no-hscroll \
   --info=inline \
-  --pointer=' ' \
+  --pointer=' ' \
   --prompt='   ' \
-  --marker=' ' \
+  --marker='󰥱 ' \
   --color=fg:#575279 \
-  --color=fg+:#575279 \
-  --color=hl:#b4637a \
-  --color=hl+:#b4637a \
+  --color=fg+:#f2e9e1 \
+  --color=hl:#286983 \
+  --color=hl+:#286983 \
   --color=bg:-1 \
-  --color=bg+:-1 \
+  --color=bg+:#907aa9 \
   --color=gutter:-1 \
+  --color=query:#286983 \
   --color=border:#575279 \
-  --color=info:#d7827e \
-  --color=prompt:#d7827e \
-  --color=pointer:#d7827e \
-  --color=marker:#d7827e \
+  --color=info:#575279 \
+  --color=prompt:#286983 \
+  --color=pointer:#286983 \
+  --color=marker:#286983 \
   --color=spinner:#d7827e \
   --color=header:#d7827e \
-  --history-size=10000"
+  --history-size=10000 \
+  --preview-window=:hidden \
+  --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200' \
+  --preview-window=right:50% \
+  --preview-label='[ Preview ]'
+  --bind 'ctrl-v:toggle-preview'
+  --bind 'ctrl-a:select-all'"
 
 # set options for less
 export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --no-init --window=-4'
@@ -175,6 +182,3 @@ export EDITOR=$(which nvim)
 
 # GPG TTY
 export GPG_TTY=$TTY
-
-# TERM
-export TERM=tmux-256color
