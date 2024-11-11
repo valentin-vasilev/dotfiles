@@ -8,12 +8,14 @@ gh
 gardener/tap/gardenlogin
 git
 go
+gpg
 helm
+jq
 int128/kubelogin/kubelogin
 kind
 kubernetes-cli
 kustomize
-lfadsads
+luarocks
 neovim
 node
 pyenv
@@ -21,6 +23,8 @@ ripgrep
 spaceship
 stow
 tmux
+tree
+wget
 yazi
 yq
 zoxide
