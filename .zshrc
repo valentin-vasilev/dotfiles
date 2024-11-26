@@ -152,14 +152,14 @@ export FZF_DEFAULT_OPTS="
   --prompt='   ' \
   --marker='󰥱 ' \
   --color=fg:#575279 \
-  --color=fg+:#f2e9e1 \
+  --color=fg+:#907aa9 \
   --color=hl:#286983 \
   --color=hl+:#286983 \
   --color=bg:-1 \
-  --color=bg+:#907aa9 \
+  --color=bg+:#dfdad9 \
   --color=gutter:-1 \
   --color=query:#286983 \
-  --color=border:#575279 \
+  --color=border:#6d8f89 \
   --color=info:#575279 \
   --color=prompt:#286983 \
   --color=pointer:#286983 \
@@ -182,3 +182,7 @@ export EDITOR=$(which nvim)
 
 # GPG TTY
 export GPG_TTY=$TTY
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
+
+zstyle ':completion:*' menu select
