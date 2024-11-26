@@ -51,42 +51,6 @@ return {
 				h5 = "pine",
 				h6 = "foam",
 			},
-			-- Change specific vim highlight groups
-			-- https://github.com/rose-pine/neovim/wiki/Recipes
-			highlight_groups = {
-				Normal = { bg = "none" },
-				NormalFloat = { bg = "none" },
-				ColorColumn = { bg = "rose" },
-				WinBar = { bg = "none" },
-				WinBarNC = { bg = "none", blend = 0 },
-				-- Visual mode highlight colors
-				Visual = { fg = "base", bg = "iris" },
-				VisualNC = { fg = "base", bg = "iris" },
-				-- Search highlight colors
-				Search = { fg = "overlay", bg = "foam" },
-				IncSearch = { fg = "overlay", bg = "foam" },
-				CurSearch = { fg = "overlay", bg = "foam" },
-				-- Telescope color settings
-				TelescopeBorder = { fg = "text", bg = "none" },
-				TelescopeNormal = { fg = "subtle", bg = "none" },
-				TelescopeSelection = { fg = "text", bg = "none" },
-				TelescopeSelectionCaret = { fg = "love", bg = "none" },
-				TelescopeMultiSelection = { fg = "text", bg = "none" },
-				TelescopeTitle = { fg = "base", bg = "text" },
-				TelescopePromptTitle = { fg = "base", bg = "text" },
-				TelescopePreviewTitle = { fg = "base", bg = "text" },
-				TelescopePromptNormal = { fg = "text", bg = "none" },
-				TelescopePromptBorder = { fg = "text", bg = "none" },
-				-- Markdown highlight colors
-				RenderMarkdownCode = { fg = "pine", bg = "highlight_high", italic = true },
-				-- Navic highlight colors
-				NavicText = { fg = "pine", bg = "none" },
-				-- Remove background for git signs highlight groups
-				SignColumn = { bg = "none" },
-				GitSignsAdd = { bg = "none" },
-				GitSignsChange = { bg = "none" },
-				GitSignsDelete = { bg = "none" },
-			},
 		})
 		vim.cmd.colorscheme("rose-pine")
 	end,

@@ -35,6 +35,9 @@ vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+-- Open vertical splits to the right
+vim.opt.splitright = true
+
 -- Scroll off
 vim.opt.scrolloff = 18
 
@@ -58,12 +61,3 @@ vim.opt.listchars = {
 	precedes = "«",
 	trail = "•",
 }
-
-vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
-vim.cmd("highlight NormalFloat guibg=NONE ctermbg=NONE")
-
--- Remove background for git signs highlight groups
-vim.cmd("highlight SignColumn guibg=NONE ctermbg=NONE")
-vim.cmd("highlight GitSignsAdd guibg=NONE ctermbg=NONE")
-vim.cmd("highlight GitSignsChange guibg=NONE ctermbg=NONE")
-vim.cmd("highlight GitSignsDelete guibg=NONE ctermbg=NONE")

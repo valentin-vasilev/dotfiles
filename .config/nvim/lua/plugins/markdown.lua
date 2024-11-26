@@ -20,14 +20,14 @@ return {
 			},
 			code = {
 				enabled = true,
-				sign = true,
+				sign = false,
 				style = "full",
-				leftpad = 2,
 				border = "thin",
 				above = "▄",
 				below = "▀",
 				highlight = "RenderMarkdownCode",
 			},
+			latex = { enabled = false },
 		})
 	end,
 }

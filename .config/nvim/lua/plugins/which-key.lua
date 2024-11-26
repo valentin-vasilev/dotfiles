@@ -10,8 +10,8 @@ return {
   config = function()
     require("which-key").setup({
       icons = {
-        breadcrumb = "", -- symbol used in the command line area that shows your active key combo
-        separator = "", -- symbol used between a key and it's label
+        breadcrumb = " ", -- symbol used in the command line area that shows your active key combo
+        separator = " ", -- symbol used between a key and it's label
         group = " ", -- symbol prepended to a group
       },
       win = {
@@ -35,7 +35,7 @@ return {
     local wk = require("which-key")
     -- buffer keymaps
     wk.add({
-      { "<leader>b", icon = "", group = "buffer" },
+      { "<leader>b", icon = " ", group = "buffer" },
       { "<leader>bk", "<cmd>bd!<cr>", desc = "buffer kill" },
       { "<leader>bn", "<cmd>bn<cr>", desc = "buffer next" },
       { "<leader>bp", "<cmd>bp<cr>", desc = "buffer previous" },
@@ -46,7 +46,7 @@ return {
       {
         "<leader>S",
         [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/g<Left><Left>]],
-        icon = "󰬳",
+        icon = "󰬳 ",
         desc = "substitute string",
       },
     })
@@ -66,6 +66,48 @@ return {
       { "<leader>gr", "<cmd>lua require('gitsigns').reset_hunk()<cr>",      desc = "reset hunk" },
       { "<leader>gs", "<cmd>lua require('gitsigns').stage_hunk()<cr>",      desc = "stage hunk" },
       { "<leader>gu", "<cmd>lua require('gitsigns').undo_stage_hunk()<cr>", desc = "undo stage hunk" },
+    })
+    -- copilot chat keymaps
+    wk.add({
+      { "<leader>c", icon = " ", group = "copilot", mode = { "n", "v" } },
+      { "<leader>cc", icon = "󰭻 ", group = "chat", mode = { "n", "v" } },
+      {
+        "<leader>cct",
+        "<cmd>CopilotChatToggle<cr>",
+        desc = "copilot chat toggle",
+      },
+      {
+        "<leader>ccs",
+        "<cmd>CopilotChatTests<cr>",
+        desc = "copilot chat generate tests",
+      },
+      {
+        "<leader>ccd",
+        "<cmd>CopilotChatDocs<cr>",
+        desc = "copilot chat add docs",
+        mode = { "n", "v" },
+      },
+      {
+        "<leader>cce",
+        "<cmd>CopilotChatExplain<cr>",
+        desc = "copilot chat explain code",
+        mode = { "n", "v" },
+      },
+      {
+        "<leader>cs",
+        "<cmd>Copilot status<cr>",
+        desc = "copilot status",
+      },
+      {
+        "<leader>ce",
+        "<cmd>Copilot enable<cr>",
+        desc = "copilot enable",
+      },
+      {
+        "<leader>cd",
+        "<cmd>Copilot disable<cr>",
+        desc = "copilot disable",
+      },
     })
     -- telescope search keymaps
     wk.add({
@@ -114,6 +156,11 @@ return {
         "<leader>sk",
         "<cmd>lua require('telescope.builtin').keymaps()<cr>",
         desc = "search keymaps",
+      },
+      {
+        "<leader>sm",
+        "<cmd>lua require('telescope.builtin').marks()<cr>",
+        desc = "search marks",
       },
       {
         "<leader>sr",

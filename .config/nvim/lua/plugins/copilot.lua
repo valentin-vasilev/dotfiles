@@ -4,7 +4,24 @@ return {
     cmd = "Copilot",
     event = "InsertEnter",
     config = function()
-      require("copilot").setup()
+      require("copilot").setup({
+        suggestion = {
+          enabled = false,
+        },
+        panel = {
+          enabled = false,
+        },
+        filetypes = {
+          markdown = false,
+          yaml = false,
+          toml = false,
+          json = false,
+          gitcommit = false,
+          gitconfig = false,
+          gitrebase = false,
+          text = false,
+        },
+      })
     end,
   },
   {
