@@ -100,6 +100,14 @@ SPACESHIP_PYTHON_SUFFIX="]"	        # Section's suffix
 SPACESHIP_PYTHON_SYMBOL=" "	      # Symbol displayed before the section
 SPACESHIP_PYTHON_COLOR="ea9d34"     # Section's color
 
+# golang
+SPACESHIP_GOLANG_SHOW=true	        # Show section
+SPACESHIP_GOLANG_ASYNC=true	        # Render section asynchronously
+SPACESHIP_GOLANG_PREFIX="["	        # Section's prefix
+SPACESHIP_GOLANG_SUFFIX="]"	        # Section's suffix
+SPACESHIP_GOLANG_SYMBOL="󰟓 "	      # Symbol displayed before the section
+SPACESHIP_GOLANG_COLOR="ea9d34"     # Section's color
+
 # lua
 SPACESHIP_LUA_SHOW=true	            # Show section
 SPACESHIP_LUA_ASYNC=true	          # Render section asynchronously
