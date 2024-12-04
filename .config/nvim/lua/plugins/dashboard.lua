@@ -1,5 +1,7 @@
 return {
 	"nvimdev/dashboard-nvim",
+  enabled = true,
+	dependencies = { { "nvim-tree/nvim-web-devicons" } },
 	event = "VimEnter",
 	config = function()
 		require("dashboard").setup({
@@ -20,8 +22,10 @@ return {
 					},
 					{ desc = "New file", icon = "󰓏 ", group = "@property", action = "enew", key = "n" },
 				},
+        packages = { enable = false },
+        mru = { enable = false },
+        footer = { "Hi, Val!" },
 			},
 		})
 	end,
-	dependencies = { { "nvim-tree/nvim-web-devicons" } },
 }

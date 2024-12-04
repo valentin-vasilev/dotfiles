@@ -59,9 +59,6 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lsp_attach = function(client, bufnr) end
 
-			lspconfig.ansiblels.setup({
-				capabilities = capabilities,
-			})
 			lspconfig.bashls.setup({
 				capabilities = capabilities,
 			})

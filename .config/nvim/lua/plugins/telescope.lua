@@ -6,14 +6,17 @@ return {
 		version = "*",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
+      local telescope = require("telescope")
+      telescope.setup({
 			defaults = {
 				mappings = {
 					i = {
 						["<C-u>"] = false,
-						["<C-d>"] = false,
+						["<C-d>"] = "delete_buffer",
 					},
 				},
 			}
+      })
 		end,
 	},
 	{

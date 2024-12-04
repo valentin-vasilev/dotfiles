@@ -1,5 +1,6 @@
 return {
 	"folke/noice.nvim",
+  enabled = true,
 	event = "VeryLazy",
 	opts = {},
 	dependencies = {
@@ -7,7 +8,8 @@ return {
 		"rcarriga/nvim-notify",
 	},
 	config = function()
-		require("noice").setup({
+    local noice = require("noice")
+		noice.setup({
 			cmdline = {
 				format = {
 					cmdline = { pattern = "^:", icon = " ", lang = "vim" },
@@ -56,6 +58,12 @@ return {
 					},
 				},
 			},
+      routes = {
+      {
+        view = "notify",
+        filter = { event = "msg_showmode" },
+        },
+      },
 		})
 	end,
 }
