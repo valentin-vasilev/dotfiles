@@ -15,7 +15,9 @@ return {
       },
       integrations = {
         telescope = true,
+        diffview = true,
       },
     })
   end,
 }
+

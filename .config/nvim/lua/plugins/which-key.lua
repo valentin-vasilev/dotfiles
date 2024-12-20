@@ -53,6 +53,9 @@ return {
     -- gitops keymaps [gitsigns and neogit]
     wk.add({
       { "<leader>g",  group = "gitops" },
+      { "<leader>gd", group = "diff" },
+      -- { "<leader>gdo", "<cmd>set hidden<cr><cmd>DiffviewOpen<cr><cmd>", desc = "diffview open"},
+      -- { "<leader>gdc", "<cmd>set hidden<cr><cmd>DiffviewClose<cr><cmd>set nohidden<cr>", desc = "diffview close"},
       { "<leader>gb", "<cmd>lua require('gitsigns').blame_line()<cr>",   desc = "blame line" },
       { "<leader>gf", "<cmd>lua require('gitsigns').diffthis('~1')<cr>", desc = "diff this" },
       {
@@ -118,7 +121,7 @@ return {
         desc = "search in current buffer",
       },
       {
-        "<leader>s<space>",
+        "<leader>so",
         "<cmd>lua require('telescope.builtin').buffers()<cr>",
         desc = "search opened buffers",
       },

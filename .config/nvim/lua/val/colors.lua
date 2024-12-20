@@ -16,12 +16,14 @@ local colors = {
 	highlight_low = "#f4ede8",
 	highlight_med = "#dfdad9",
 	highlight_high = "#cecacd",
+  highlight_add = "#d9e1dd",
+  highlight_change = "#f3ddd7",
 }
 
 -- Search highlight groups
-vim.api.nvim_set_hl(0, "Search", { fg = colors.leaf, bg = colors.highlight_high })
-vim.api.nvim_set_hl(0, "IncSearch", { fg = colors.base, bg = colors.leaf })
-vim.api.nvim_set_hl(0, "CurSearch", { fg = colors.base, bg = colors.leaf })
+vim.api.nvim_set_hl(0, "Search", { fg = colors.iris, bg = colors.highlight_med })
+vim.api.nvim_set_hl(0, "IncSearch", { fg = colors.iris, bg = colors.highlight_med })
+vim.api.nvim_set_hl(0, "CurSearch", { fg = colors.iris, bg = colors.highlight_med })
 
 -- Normal mode highlight colors
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -99,3 +101,16 @@ vim.api.nvim_set_hl(0, "DropBarMenuHoverIcon", { fg = colors.iris, bg = colors.h
 
 -- Neogit highlight colors
 vim.api.nvim_set_hl(0, "NeogitDiffAdd", { fg = colors.leaf, bg = colors.highlight_med })
+
+-- Diff highlight colors
+vim.api.nvim_set_hl(0, "DiffAdd", { fg = colors.leaf, bg = colors.highlight_add, blend=20 })
+vim.api.nvim_set_hl(0, "DiffChange", { fg = colors.rose, bg = colors.highlight_change, blend=20 })
+vim.api.nvim_set_hl(0, "DiffText", { fg = colors.rose, bg = colors.highlight_change, blend=20 })
+vim.api.nvim_set_hl(0, "DiffDelete", { fg = colors.rose, bg = colors.highlight_change, blend=20 })
+
+-- DiffView highlight colors
+vim.api.nvim_set_hl(0, "DiffviewFilePanelFileName", { fg = colors.foam, bg = "none" })
+vim.api.nvim_set_hl(0, "DiffviewFilePanelInsertions", { fg = colors.leaf, bg = "none" })
+vim.api.nvim_set_hl(0, "DiffviewFilePanelDeletions", { fg = colors.rose, bg = "none" })
+vim.api.nvim_set_hl(0, "DiffviewStatusAdded", { fg = colors.leaf, bg = "none" })
+vim.api.nvim_set_hl(0, "DiffviewStatusModified", { fg = colors.rose, bg = "none" })

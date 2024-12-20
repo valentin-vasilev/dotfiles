@@ -1,40 +1,39 @@
+local telescope = require("telescope")
+
 return {
-	{
-		-- [[ Install and configure Telescope ]]
-		-- Fuzzy Finder (files, lsp, etc)
-		"nvim-telescope/telescope.nvim",
-		version = "*",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		config = function()
-      local telescope = require("telescope")
+  {
+    "nvim-telescope/telescope.nvim",
+    version = "*",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+      "nvim-telescope/telescope-ui-select.nvim",
+    },
+    config = function()
       telescope.setup({
-			defaults = {
-				mappings = {
-					i = {
-						["<C-u>"] = false,
-						["<C-d>"] = "delete_buffer",
-					},
-				},
-			}
+        defaults = {
+          mappings = {
+            i = {
+              ["<C-u>"] = false,
+              ["<C-d>"] = "delete_buffer",
+            },
+          },
+        },
+        pickers = {
+          find_files = {
+            hidden = true,
+            theme = "ivy",
+          },
+        },
+        extensions = {
+          fzf = {},
+          ["ui-select"] = {
+            require("telescope.themes").get_dropdown({}),
+          },
+        },
       })
-		end,
-	},
-	{
-		"nvim-telescope/telescope-ui-select.nvim",
-		config = function()
-			require("telescope").setup({
-				extensions = {
-					["ui-select"] = {
-						require("telescope.themes").get_dropdown({}),
-					},
-				},
-				pickers = {
-					find_files = {
-						hidden = true,
-					},
-				},
-			})
-			require("telescope").load_extension("ui-select")
-		end,
-	},
+      telescope.load_extension("fzf")
+      telescope.load_extension("ui-select")
+    end,
+  },
 }
