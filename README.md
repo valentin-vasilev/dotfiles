@@ -14,7 +14,7 @@ This is in beta and will always remain like that. I'm constantly adding improvem
 
 ## Tools
 
-- Terminal emulator: [kitty](https://sw.kovidgoyal.net/kitty/)
+- Terminal emulator: [ghostty](https://ghostty.org/)
 - Terminal multiplexor: [tmux](https://github.com/tmux/tmux/wiki)
 - Text editor: [neovim](https://neovim.io/)
 - Shell: [zsh](https://www.zsh.org/)
