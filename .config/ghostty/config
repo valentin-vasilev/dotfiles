@@ -16,6 +16,7 @@ font-size = 16
 macos-titlebar-style = hidden
 window-padding-x = 5
 window-padding-y = 5
+window-padding-balance = true
 
 theme = "rose-pine-dawn"
 
@@ -23,3 +24,14 @@ background-opacity = 0.95
 background-blur-radius = 30
 
 grapheme-width-method = unicode
+
+cursor-style = block
+cursor-style-blink = false
+mouse-hide-while-typing = true
+
+macos-icon = custom-style
+macos-icon-frame = beige
+macos-icon-ghost-color = #BCBEC4
+macos-icon-screen-color = #EA9D34
+
+confirm-close-surface = false
