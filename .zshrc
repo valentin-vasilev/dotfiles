@@ -49,8 +49,8 @@ bindkey '^b'   backward-word
 # zsh 
 ## set zsh history file and size
 export HISTFILE=~/.zsh_history
-export HISTFILESIZE=1000000000
-export HISTSIZE=1000000000
+export HISTFILESIZE=10000
+export HISTSIZE=10000
 ## setting the extended_history records the timestamp of each command in HISTFILE
 setopt EXTENDED_HISTORY
 ## append commands to zsh history immediately after execution
