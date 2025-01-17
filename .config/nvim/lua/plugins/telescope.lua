@@ -24,6 +24,15 @@ return {
             hidden = true,
             theme = "ivy",
           },
+          live_grep = {
+            theme = "ivy",
+          },
+          buffers = {
+            theme = "ivy",
+          },
+          help_tags = {
+            theme = "ivy",
+          },
         },
         extensions = {
           fzf = {},

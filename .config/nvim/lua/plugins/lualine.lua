@@ -2,6 +2,7 @@ return {
 	-- [[ Install and configure lualine ]]
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
+	enabled = true,
 	config = function()
 		require("lualine").setup({
 			options = {
@@ -29,9 +30,20 @@ return {
 				},
 				lualine_c = {},
 				lualine_x = {},
-				lualine_y = { "filetype", "encoding", "progress" },
+				lualine_y = {
+					{
+						"filetype",
+						icons_enabled = false,
+					},
+					"encoding",
+					"progress",
+				},
 				lualine_z = {
-					{ "location", separator = { right = "" }, left_padding = 2 },
+					{
+            "location",
+            icons_enabled = false,
+            separator = { right = "" }
+          },
 				},
 			},
 			inactive_sections = {

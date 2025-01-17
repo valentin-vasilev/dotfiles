@@ -37,6 +37,7 @@ return {
     wk.add({
       { "<leader>b", icon = " ", group = "buffer" },
       { "<leader>bk", "<cmd>bd!<cr>", desc = "buffer kill" },
+      { "<leader>bc", "<cmd>close<cr>", desc = "buffer close" },
       { "<leader>bn", "<cmd>bn<cr>", desc = "buffer next" },
       { "<leader>bp", "<cmd>bp<cr>", desc = "buffer previous" },
       { "<leader>br", "<cmd>edit<cr>", noremap = true, silent = true, desc = "reload buffer" },
@@ -54,8 +55,19 @@ return {
     wk.add({
       { "<leader>g",  group = "gitops" },
       { "<leader>gd", group = "diff" },
-      -- { "<leader>gdo", "<cmd>set hidden<cr><cmd>DiffviewOpen<cr><cmd>", desc = "diffview open"},
-      -- { "<leader>gdc", "<cmd>set hidden<cr><cmd>DiffviewClose<cr><cmd>set nohidden<cr>", desc = "diffview close"},
+      {
+        "<leader>gdo",
+        function()
+          local commit = vim.fn.input("Enter index to diff (default origin/master): ", "origin/master")
+          vim.cmd("DiffviewOpen " .. commit)
+        end,
+        desc = "diffview open",
+      },
+      {
+        "<leader>gdc",
+        "<cmd>set hidden<cr><cmd>DiffviewClose<cr><cmd>set nohidden<cr>",
+        desc = "diffview close",
+      },
       { "<leader>gb", "<cmd>lua require('gitsigns').blame_line()<cr>",   desc = "blame line" },
       { "<leader>gf", "<cmd>lua require('gitsigns').diffthis('~1')<cr>", desc = "diff this" },
       {
