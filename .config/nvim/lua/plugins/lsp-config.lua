@@ -79,6 +79,9 @@ return {
 			lspconfig.gopls.setup({
 				capabilities = capabilities,
 			})
+      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+        border = "rounded",
+      })
 		end,
 	},
 }

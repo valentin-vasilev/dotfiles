@@ -1,4 +1,6 @@
-function CopyRegexMatchesToRegister(regex_pattern, register)
+M = {}
+
+function M.CopyRegexMatchesToRegister(regex_pattern, register)
 	if not regex_pattern or regex_pattern == "" then
 		print("Error: No regex provided")
 		return
@@ -34,8 +36,10 @@ vim.api.nvim_create_user_command("CopyRegexMatchesToRegister", function()
   local register = parts[2] or "+" -- System clipboard as default register
   if regex ~= "" then
     register = register or "+"
-    CopyRegexMatchesToRegister(regex, register)
+    M.CopyRegexMatchesToRegister(regex, register)
   else
     print("No regex provided")
   end
 end, { nargs = "?" })
+
+return M

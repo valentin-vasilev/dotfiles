@@ -29,3 +29,5 @@ vim.api.nvim_create_autocmd("User", {
 		require("val.colors")
 	end,
 })
+
+require("copy_regex_matches")
