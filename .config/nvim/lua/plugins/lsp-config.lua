@@ -79,11 +79,6 @@ return {
 			lspconfig.gopls.setup({
 				capabilities = capabilities,
 			})
-
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Knowledge" })
-			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "code action" })
-			vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, { desc = "diagnostics next" })
-			vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, { desc = "diagnostics previous" })
 		end,
 	},
 }

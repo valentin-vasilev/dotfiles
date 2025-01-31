@@ -8,7 +8,7 @@ return {
 		nvimtree.setup({
 			view = {
 				width = 50,
-				relativenumber = true,
+				relativenumber = false,
 			},
 			renderer = {
 				indent_markers = {
@@ -60,14 +60,5 @@ return {
 				ignore = false,
 			},
 		})
-		vim.keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "explorer toggle" })
-		vim.keymap.set(
-			"n",
-			"<leader>ef",
-			"<cmd>NvimTreeFindFileToggle<CR>",
-			{ desc = "explorer toggle on current file" }
-		)
-		vim.keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "explorer collapse" })
-		vim.keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "explorer refresh" })
 	end,
 }
