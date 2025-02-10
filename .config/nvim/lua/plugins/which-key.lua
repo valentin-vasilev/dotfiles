@@ -2,6 +2,7 @@ return {
 	-- [[ Install and configure which-key ]]
 	-- Useful plugin to show you pending keybinds.
 	"folke/which-key.nvim",
+  event = "VeryLazy",
 	init = function()
 		vim.o.timeout = true
 		vim.o.timeoutlen = 300
@@ -9,27 +10,28 @@ return {
 	opts = {},
 	config = function()
 		require("which-key").setup({
+      preset = "modern",
 			icons = {
-				breadcrumb = " ", -- symbol used in the command line area that shows your active key combo
-				separator = " ", -- symbol used between a key and it's label
-				group = " ", -- symbol prepended to a group
+				breadcrumb = " ",
+				separator = " ",
+				group = " ",
 			},
 			win = {
 				no_overlap = true,
-				border = "single", -- none, single, double, shadow
-				padding = { 1, 2 }, -- extra window padding [top, right, bottom, left]
-				title = true, -- display a title in the popup window
-				title_pos = "center", -- title position: 'left', 'center', 'right'
-				zindex = 1000, -- positive value to position WhichKey above other floating windows.
+				border = "rounded",
+				padding = { 1, 2 },
+				title = true,
+				title_pos = "center",
+				zindex = 1000,
 				wo = {
 					winblend = 0,
 				},
 			},
 			layout = {
-				height = { min = 4, max = 25 }, -- min and max height of the columns
-				width = { min = 20, max = 50 }, -- min and max width of the columns
-				spacing = 3, -- spacing between columns
-				align = "left", -- align columns left, center or right
+				height = { min = 4, max = 25 },
+				width = { min = 20, max = 50 },
+				spacing = 3,
+				align = "center",
 			},
 		})
 		local wk = require("which-key")
