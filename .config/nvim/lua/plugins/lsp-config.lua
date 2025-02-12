@@ -53,35 +53,45 @@ return {
 	{
 		-- [[ Install and configure nvim-lspconfig ]]
 		"neovim/nvim-lspconfig",
+		dependencies = { "saghen/blink.cmp" },
 		lazy = false,
 		config = function()
 			local lspconfig = require("lspconfig")
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-			local lsp_attach = function(client, bufnr) end
+			local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-			lspconfig.bashls.setup({
+			lspconfig["bashls"].setup({
 				capabilities = capabilities,
 			})
-			lspconfig.dockerls.setup({
+			lspconfig["dockerls"].setup({
 				capabilities = capabilities,
 			})
-			lspconfig.lua_ls.setup({
+			lspconfig["lua_ls"].setup({
 				capabilities = capabilities,
 			})
-			lspconfig.pyright.setup({
+			lspconfig["pyright"].setup({
 				capabilities = capabilities,
-				on_attach = lsp_attach,
-				filetypes = { "python" },
+				settings = {
+					pyright = {
+						-- Using Ruff's import organizer
+						disableOrganizeImports = true,
+					},
+					python = {
+						analysis = {
+							-- Ignore all files for analysis to exclusively use Ruff for linting
+							ignore = { "*" },
+						},
+					},
+				},
 			})
-			lspconfig.ruff.setup({
+			lspconfig["ruff"].setup({
 				capabilities = capabilities,
 			})
-			lspconfig.gopls.setup({
+			lspconfig["gopls"].setup({
 				capabilities = capabilities,
 			})
-      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-        border = "rounded",
-      })
+			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+				border = "rounded",
+			})
 		end,
 	},
 }
