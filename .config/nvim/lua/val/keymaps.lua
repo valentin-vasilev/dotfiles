@@ -43,6 +43,8 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
 
 -- Use C-c as Esc in inser mode
 vim.keymap.set("i", "<C-c>", "<Esc>")
+-- Disable "s" in normal mode
+vim.keymap.set("n", "s", "<Nop>", { noremap = true, silent = true })
 
 -- Autocommands
 -- vim.api.nvim_create_autocmd({ "BufWritePre" }, {

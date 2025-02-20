@@ -10,7 +10,23 @@ return {
 		config = function()
 			local config = require("nvim-treesitter.configs")
 			config.setup({
-				ensure_installed = { "lua", "python", "bash", "vim", "vimdoc", "terraform", "regex", "markdown_inline" },
+				ensure_installed = {
+					"bash",
+					"diff",
+					"dockerfile",
+					"editorconfig",
+					"helm",
+					"go",
+					"json",
+					"lua",
+					"markdown_inline",
+					"python",
+					"regex",
+					"terraform",
+					"vim",
+					"vimdoc",
+					"yaml",
+				},
 				sync_install = false,
 				auto_install = true,
 				modules = {},
