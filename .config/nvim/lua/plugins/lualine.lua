@@ -8,6 +8,7 @@ return {
 			options = {
 				theme = "auto",
 				component_separators = "",
+        always_show_tabline = false,
 				section_separators = { left = "", right = "" },
 			},
 			sections = {

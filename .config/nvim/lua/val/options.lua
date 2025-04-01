@@ -51,6 +51,7 @@ vim.opt.completeopt = "menuone,noselect"
 
 -- Set support for terminal gui colors
 vim.opt.termguicolors = true
+vim.opt.showtabline = 0
 
 -- Display characters as dots in visual mode
 vim.opt.list = false

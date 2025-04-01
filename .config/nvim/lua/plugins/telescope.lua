@@ -8,6 +8,12 @@ return {
 			"nvim-lua/plenary.nvim",
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 			"nvim-telescope/telescope-ui-select.nvim",
+			{
+				"nvim-telescope/telescope-live-grep-args.nvim",
+				-- This will not install any breaking changes.
+				-- For major updates, this must be adjusted manually.
+				version = "^1.0.0",
+			},
 		},
 		config = function()
 			telescope.setup({
@@ -36,6 +42,7 @@ return {
 			})
 			telescope.load_extension("fzf")
 			telescope.load_extension("ui-select")
+      telescope.load_extension("live_grep_args")
 		end,
 	},
 }

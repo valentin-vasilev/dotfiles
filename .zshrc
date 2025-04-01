@@ -16,6 +16,9 @@ complete -C '/opt/homebrew/etc/bash_completion.d/az' az
 # kubectl autocompletion
 source <(kubectl completion zsh)
 
+# switcher autocompletion
+source <(switcher completion zsh)
+
 # k9s config dir
 export K9S_CONFIG_DIR="$HOME/.config/k9s"
 
@@ -69,6 +72,9 @@ alias c="clear"
 
 ## kubectl
 alias k="kubectl"
+
+## switcher
+alias s="switcher"
 
 # homebrew install apps
 alias apps="xargs brew install < $HOME/dotfiles/apps"

@@ -46,6 +46,7 @@ return {
 					"black",
 					"ruff",
 					"stylua",
+          "shfmt",
 				},
 			})
 		end,
