@@ -1,7 +1,7 @@
 return {
 	"nvimdev/dashboard-nvim",
-  enabled = true,
-	dependencies = { { "nvim-tree/nvim-web-devicons" } },
+	enabled = true,
+	dependencies = { "nvim-tree/nvim-web-devicons" },
 	event = "VimEnter",
 	config = function()
 		require("dashboard").setup({
@@ -11,20 +11,19 @@ return {
 					enable = true,
 				},
 				shortcut = {
-					{ desc = "󱑤 Update", group = "@property", action = "Lazy update", key = "u" },
+					{ desc = "Update", icon = "󱑤 ", group = "Label", action = "Lazy update", key = "u" },
 					{
-						icon = " ",
-						-- icon_hl = "@variable",
 						desc = "Files",
+						icon = " ",
 						group = "Label",
 						action = "Telescope find_files",
 						key = "f",
 					},
-					{ desc = "New file", icon = "󰓏 ", group = "@property", action = "enew", key = "n" },
+					{ desc = "New file", icon = "󰓏 ", group = "Label", action = "enew", key = "n" },
 				},
-        packages = { enable = false },
-        mru = { enable = false },
-        footer = { "Hi, Val!" },
+				packages = { enable = false },
+				mru = { enable = false },
+				footer = { "Hi, Val!" },
 			},
 		})
 	end,

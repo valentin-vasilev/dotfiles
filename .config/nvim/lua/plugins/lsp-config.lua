@@ -27,6 +27,7 @@ return {
 					"bashls",
 					"dockerls",
 					"docker_compose_language_service",
+					"helm_ls",
 					"jsonls",
 					"lua_ls",
 					"yamlls",
@@ -46,7 +47,9 @@ return {
 					"black",
 					"ruff",
 					"stylua",
-          "shfmt",
+					"shfmt",
+					"goimports",
+					"hadolint",
 				},
 			})
 		end,
@@ -56,20 +59,24 @@ return {
 		"neovim/nvim-lspconfig",
 		dependencies = { "saghen/blink.cmp" },
 		lazy = false,
+		event = { "BufReadPre", "BufNewFile", "BufEnter" },
 		config = function()
 			local lspconfig = require("lspconfig")
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-			lspconfig["bashls"].setup({
+			lspconfig.bashls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig["dockerls"].setup({
+
+			lspconfig.dockerls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig["lua_ls"].setup({
+
+			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig["pyright"].setup({
+
+			lspconfig.pyright.setup({
 				capabilities = capabilities,
 				settings = {
 					pyright = {
@@ -84,12 +91,37 @@ return {
 					},
 				},
 			})
-			lspconfig["ruff"].setup({
+
+			lspconfig.ruff.setup({
 				capabilities = capabilities,
 			})
-			lspconfig["gopls"].setup({
+
+			lspconfig.gopls.setup({
 				capabilities = capabilities,
 			})
+
+			lspconfig.helm_ls.setup({
+				settings = {
+					["helm-ls"] = {
+						yamlls = {
+							path = "yaml-language-server",
+						},
+					},
+				},
+				filetypes = { "helm" },
+				root_dir = require("lspconfig.util").root_pattern("Chart.yaml"),
+			})
+
+			lspconfig.yamlls.setup({
+				settings = {
+					yaml = {
+						schemas = {
+							["https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json"] = "templates/**/*workflow*.yaml",
+						},
+					},
+				},
+			})
+
 			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 				border = "rounded",
 			})

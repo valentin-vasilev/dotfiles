@@ -114,3 +114,17 @@ vim.api.nvim_set_hl(0, "DiffviewFilePanelInsertions", { fg = colors.leaf, bg = "
 vim.api.nvim_set_hl(0, "DiffviewFilePanelDeletions", { fg = colors.rose, bg = "none" })
 vim.api.nvim_set_hl(0, "DiffviewStatusAdded", { fg = colors.leaf, bg = "none" })
 vim.api.nvim_set_hl(0, "DiffviewStatusModified", { fg = colors.rose, bg = "none" })
+
+-- Trouble highlight colors
+vim.api.nvim_set_hl(0, "TroubleCount", { fg = colors.rose, bg = "none" })
+
+-- CopilotChat highlight colors
+vim.api.nvim_set_hl(0, "CopilotChatHeader", { fg = colors.leaf, bg = "none" })
+vim.api.nvim_set_hl(0, "CopilotChatSeparator", { fg = colors.leaf, bg = "none" })
+
+-- Showkeys highlight colors
+vim.api.nvim_set_hl(0, "SkFloatBorder", { fg = colors.leaf, bg = "none" })
+vim.api.nvim_set_hl(0, "SkNormal", { fg = colors.leaf, bg = "none" })
+vim.api.nvim_set_hl(0, "SkActive", { fg = colors.leaf, bg = "none" })
+vim.api.nvim_set_hl(0, "SkInactive", { fg = colors.iris, bg = "none" })
+

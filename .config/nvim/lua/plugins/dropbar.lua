@@ -10,12 +10,12 @@ return {
 				enable = true,
 				ui = {
 					bar = {
-						separator = "   ",
+						separator = "  ",
 						extends = "…",
 					},
 					menu = {
 						separator = " ",
-						indicator = "   ",
+						indicator = "",
 					},
 				},
 			},
