@@ -45,7 +45,11 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
 vim.keymap.set("i", "<C-c>", "<Esc>")
 -- Disable "s" in normal mode
 vim.keymap.set("n", "s", "<Nop>", { noremap = true, silent = true })
-
+vim.keymap.set({ "n", "v" }, "K", function()
+	vim.lsp.buf.hover({
+		border = "rounded",
+	})
+end)
 -- Autocommands
 -- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 -- 	pattern = { "*.py", "*.lua", "*.sh" },
@@ -55,9 +59,9 @@ vim.keymap.set("n", "s", "<Nop>", { noremap = true, silent = true })
 -- })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
-  desc = "Highlight when yanking (copying) text",
-  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
+	desc = "Highlight when yanking (copying) text",
+	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })

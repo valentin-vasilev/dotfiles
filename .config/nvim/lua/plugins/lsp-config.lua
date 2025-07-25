@@ -25,13 +25,17 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"bashls",
-					"dockerls",
 					"docker_compose_language_service",
+					"dockerls",
+					"gopls",
+					"groovyls",
 					"helm_ls",
 					"jsonls",
 					"lua_ls",
 					"yamlls",
-					"gopls",
+				},
+				automatic_enable = {
+					exclude = { "lua_ls", "gopls" },
 				},
 			})
 		end,
@@ -122,8 +126,11 @@ return {
 				},
 			})
 
-			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-				border = "rounded",
+			lspconfig.groovyls.setup({
+				capabilities = capabilities,
+				cmd = { "groovy-language-server" },
+				filetypes = { "groovy" },
+				root_dir = require("lspconfig.util").root_pattern("settings.gradle", "build.gradle", ".git"),
 			})
 		end,
 	},

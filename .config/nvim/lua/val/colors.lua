@@ -16,8 +16,8 @@ local colors = {
 	highlight_low = "#f4ede8",
 	highlight_med = "#dfdad9",
 	highlight_high = "#cecacd",
-  highlight_add = "#d9e1dd",
-  highlight_change = "#f3ddd7",
+	highlight_add = "#d9e1dd",
+	highlight_change = "#f3ddd7",
 }
 
 -- Search highlight groups
@@ -49,7 +49,8 @@ vim.api.nvim_set_hl(0, "TelescopePromptNormal", { fg = colors.leaf, bg = "none" 
 vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = colors.leaf, bg = "none" })
 
 -- Markdown highlight colors
-vim.api.nvim_set_hl(0, "RenderMarkdownCode", { fg = colors.pine, bg = colors.highlight_high, italic = true })
+vim.api.nvim_set_hl(0, "RenderMarkdownCode", { fg = "none", bg = "none" })
+vim.api.nvim_set_hl(0, "Rm_RmCodeBorder_bg_as_fg", { fg = "none", bg = "none" })
 
 -- Navic highlight colors
 vim.api.nvim_set_hl(0, "NavicText", { fg = colors.pine, bg = "none" })
@@ -103,10 +104,10 @@ vim.api.nvim_set_hl(0, "DropBarMenuHoverIcon", { fg = colors.iris, bg = colors.h
 vim.api.nvim_set_hl(0, "NeogitDiffAdd", { fg = colors.leaf, bg = colors.highlight_med })
 
 -- Diff highlight colors
-vim.api.nvim_set_hl(0, "DiffAdd", { fg = colors.leaf, bg = colors.highlight_add, blend=20 })
-vim.api.nvim_set_hl(0, "DiffChange", { fg = colors.rose, bg = colors.highlight_change, blend=20 })
-vim.api.nvim_set_hl(0, "DiffText", { fg = colors.rose, bg = colors.highlight_change, blend=20 })
-vim.api.nvim_set_hl(0, "DiffDelete", { fg = colors.rose, bg = colors.highlight_change, blend=20 })
+vim.api.nvim_set_hl(0, "DiffAdd", { fg = colors.leaf, bg = colors.highlight_add, blend = 20 })
+vim.api.nvim_set_hl(0, "DiffChange", { fg = colors.rose, bg = colors.highlight_change, blend = 20 })
+vim.api.nvim_set_hl(0, "DiffText", { fg = colors.rose, bg = colors.highlight_change, blend = 20 })
+vim.api.nvim_set_hl(0, "DiffDelete", { fg = colors.rose, bg = colors.highlight_change, blend = 20 })
 
 -- DiffView highlight colors
 vim.api.nvim_set_hl(0, "DiffviewFilePanelFileName", { fg = colors.foam, bg = "none" })
@@ -128,3 +129,8 @@ vim.api.nvim_set_hl(0, "SkNormal", { fg = colors.leaf, bg = "none" })
 vim.api.nvim_set_hl(0, "SkActive", { fg = colors.leaf, bg = "none" })
 vim.api.nvim_set_hl(0, "SkInactive", { fg = colors.iris, bg = "none" })
 
+-- Blink highlight colors
+vim.api.nvim_set_hl(0, "BlinkCmpDoc", { bg = "none" })
+vim.api.nvim_set_hl(0, "BlinkCmpDocSeparator", { bg = "none" })
+vim.api.nvim_set_hl(0, "BlinkCmpDocCursorLine", { bg = "none" })
+vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", { fg = colors.iris })

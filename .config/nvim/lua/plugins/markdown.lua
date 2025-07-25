@@ -9,13 +9,13 @@ return {
 			heading = {
 				enabled = true,
 				sign = true,
-				icons = { "✿ ", "◉ ", "○ ", "✸ " },
+				icons = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 " },
 				signs = { "▸", "▹", "▪", "▫" },
 				backgrounds = { "none", "none", "none", "none" },
 			},
 			quote = {
 				enabled = true,
-				icon = "▋",
+				icon = "",
 				highlight = "RenderMarkdownQuote",
 			},
 			code = {
@@ -23,11 +23,16 @@ return {
 				sign = false,
 				style = "full",
 				border = "thin",
-				above = "▄",
-				below = "▀",
+				above = "",
+				language_border = "",
+				below = "",
 				highlight = "RenderMarkdownCode",
 			},
 			latex = { enabled = false },
+			completions = {
+				blink = { enabled = true },
+				lsp = { enabled = true },
+			},
 		})
 	end,
 }

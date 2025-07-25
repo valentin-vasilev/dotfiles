@@ -7,8 +7,8 @@ return {
 		vim.g.loaded_netrwPlugin = 1
 		nvimtree.setup({
 			view = {
-        width = 50,
-      },
+				width = 50,
+			},
 			renderer = {
 				indent_markers = {
 					enable = false,
