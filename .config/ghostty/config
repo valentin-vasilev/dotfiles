@@ -11,7 +11,7 @@ font-style-bold-italic = Bold Italic
 font-thicken = true
 
 font-synthetic-style = false
-font-size = 16
+font-size = 18
 
 macos-titlebar-style = hidden
 window-padding-x = 5
@@ -20,7 +20,7 @@ window-padding-balance = true
 
 theme = "rose-pine-dawn"
 
-background-opacity = 0.95
+background-opacity = 0.90
 background-blur-radius = 30
 
 grapheme-width-method = unicode
