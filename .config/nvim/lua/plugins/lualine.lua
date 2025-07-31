@@ -8,7 +8,7 @@ return {
 			options = {
 				theme = "auto",
 				component_separators = "",
-        always_show_tabline = false,
+				always_show_tabline = false,
 				section_separators = { left = "", right = "" },
 			},
 			sections = {
@@ -41,10 +41,10 @@ return {
 				},
 				lualine_z = {
 					{
-            "location",
-            icons_enabled = false,
-            separator = { right = "" }
-          },
+						"location",
+						icons_enabled = false,
+						separator = { right = "" },
+					},
 				},
 			},
 			inactive_sections = {
