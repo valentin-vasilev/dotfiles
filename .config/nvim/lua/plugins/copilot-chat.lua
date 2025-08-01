@@ -13,11 +13,13 @@ return {
 				height = 1,
 				width = 0.5,
 			},
-      highlight_headers = false,
+			highlight_headers = true,
 			show_help = false,
-			question_header = " ",
-			answer_header = " ",
-			error_header = " ",
+			headers = {
+				user = " ", -- Header to use for user questions
+				assistant = " ", -- Header to use for AI answers
+				tool = " ", -- Header to use for tool calls
+			},
 			separator = "───",
 		},
 	},

@@ -14,6 +14,9 @@ return {
 					enable = false,
 				},
 				icons = {
+					show = {
+						hidden = true,
+					},
 					web_devicons = {
 						file = {
 							enable = true,
@@ -30,17 +33,17 @@ return {
 							arrow_open = "",
 						},
 						git = {
-							unstaged = "",
-							staged = "󰗠",
-							unmerged = "󰓏",
-							renamed = "",
-							untracked = "",
-							deleted = "",
-							ignored = "󱠇",
+							unstaged = "×",
+							staged = "",
+							unmerged = "󰧾",
+							untracked = "󱙒",
+							renamed = "",
+							deleted = "",
+							ignored = "󱙝",
 						},
 					},
-					git_placement = "before",
-					modified_placement = "after",
+					git_placement = "after",
+					modified_placement = "signcolumn",
 					diagnostics_placement = "signcolumn",
 					bookmarks_placement = "signcolumn",
 				},

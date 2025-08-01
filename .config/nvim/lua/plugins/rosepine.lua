@@ -172,6 +172,11 @@ return {
 				DiagnosticWarn = { fg = "gold", bg = "gold", blend = 30, inherit = false },
 				DiagnosticInfo = { fg = "iris", bg = "iris", blend = 30, inherit = false },
 				DiagnosticHint = { fg = "foam", bg = "foam", blend = 30, inherit = false },
+
+				-- Statusline
+				MiniStatuslineDevinfo = { bg = "highlight_med", inherit = false },
+				MiniStatuslineFileinfo = { bg = "highlight_med", inherit = false },
+				MiniStatuslineFilename = { bg = "highlight_med", inherit = false },
 			},
 		})
 		vim.cmd.colorscheme("rose-pine")
