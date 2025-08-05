@@ -133,13 +133,15 @@ return {
 				DropBarMenuHoverIcon = { fg = "iris", bg = "highlight_med", inherit = false },
 
 				-- Neogit highlight palette
-				NeogitDiffAdd = { fg = "pine", bg = "highlight_med", inherit = false },
+				NeogitDiffAdd = { link = "DiffAdd" },
+				NeogitDiffContext = { bg = "none" },
+				NeogitDiffContextHighlight = { bg = "none" },
 
 				-- Diff highlight palette
-				DiffAdd = { fg = "pine", bg = "highlight_low", blend = 20, inherit = false },
-				DiffChange = { fg = "rose", bg = "highlight_med", blend = 20, inherit = false },
-				DiffText = { fg = "rose", bg = "highlight_med", blend = 20, inherit = false },
-				DiffDelete = { fg = "rose", bg = "highlight_high", blend = 20, inherit = false },
+				DiffAdd = { fg = "pine", bg = "pine", blend = 20, inherit = false },
+				DiffChange = { fg = "love", bg = "love", blend = 20, inherit = false },
+				DiffText = { fg = "gold", bg = "gold", blend = 20, inherit = false },
+				DiffDelete = { fg = "rose", bg = "rose", blend = 20, inherit = false },
 
 				-- DiffView highlight palette
 				DiffviewFilePanelFileName = { fg = "foam", bg = "none", inherit = false },

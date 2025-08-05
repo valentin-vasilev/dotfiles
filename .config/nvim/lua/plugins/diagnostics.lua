@@ -67,20 +67,20 @@ return {
 				-- }
 				multilines = {
 					-- Enable multiline diagnostic messages
-					enabled = false,
+					enabled = true,
 
 					-- Always show messages on all lines for multiline diagnostics
 					always_show = false,
 
 					-- Trim whitespaces from the start/end of each line
-					trim_whitespaces = false,
+					trim_whitespaces = true,
 
 					-- Replace tabs with spaces in multiline diagnostics
 					tabstop = 4,
 				},
 
 				-- Display all diagnostic messages on the cursor line
-				show_all_diags_on_cursorline = false,
+				show_all_diags_on_cursorline = true,
 
 				-- Enable diagnostics in Insert mode
 				-- If enabled, it is better to set the `throttle` option to 0 to avoid visual artifacts
@@ -95,7 +95,7 @@ return {
 					-- "wrap" - Split long messages into multiple lines
 					-- "none" - Do not truncate messages
 					-- "oneline" - Keep the message on a single line, even if it's long
-					mode = "oneline",
+					mode = "wrap",
 
 					-- Trigger wrapping to occur this many characters earlier when mode == "wrap".
 					-- Increase this value appropriately if you notice that the last few characters
@@ -164,5 +164,26 @@ return {
 		vim.api.nvim_set_hl(0, "TinyInlineInvDiagnosticVirtualTextWarn", { link = "DiagnosticWarn" })
 		vim.api.nvim_set_hl(0, "TinyInlineInvDiagnosticVirtualTextInfo", { link = "DiagnosticInfo" })
 		vim.api.nvim_set_hl(0, "TinyInlineInvDiagnosticVirtualTextHint", { link = "DiagnosticHint" })
+		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextHintMix", { link = "DiagnosticHint" })
+		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextInfoMix", { link = "DiagnosticInfo" })
+		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextWarnMix", { link = "DiagnosticWarn" })
+		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextErrorMix", { link = "DiagnosticError" })
+		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextHintMixHint", { link = "DiagnosticHint" })
+		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextHintMixInfo", { link = "DiagnosticInfo" })
+		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextHintMixWarn", { link = "DiagnosticWarn" })
+		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextInfoMixHint", { link = "DiagnosticHint" })
+		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextInfoMixInfo", { link = "DiagnosticInfo" })
+		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextInfoMixWarn", { link = "DiagnosticWarn" })
+		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextWarnMixHint", { link = "DiagnosticHint" })
+		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextWarnMixInfo", { link = "DiagnosticInfo" })
+		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextWarnMixWarn", { link = "DiagnosticWarn" })
+		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextHintMixError", { link = "DiagnosticError" })
+		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextInfoMixError", { link = "DiagnosticError" })
+		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextWarnMixError", { link = "DiagnosticError" })
+		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextErrorMixHint", { link = "DiagnosticHint" })
+		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextErrorMixInfo", { link = "DiagnosticInfo" })
+		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextErrorMixWarn", { link = "DiagnosticInfo" })
+		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextErrorMixError", { link = "DiagnosticError" })
+		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextArrow", { bg = "none" })
 	end,
 }

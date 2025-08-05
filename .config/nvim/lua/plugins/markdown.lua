@@ -3,26 +3,60 @@ return {
 	main = "render-markdown",
 	opts = {},
 	name = "render-markdown",
-	dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
+	dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" },
 	config = function()
 		require("render-markdown").setup({
 			heading = {
 				enabled = true,
-				sign = true,
+				sign = false,
 				icons = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 " },
-				signs = { "▸", "▹", "▪", "▫" },
-				backgrounds = { "none", "none", "none", "none" },
+				signs = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 " },
+				backgrounds = {
+					"RenderMarkdownH1Bg",
+					"RenderMarkdownH2Bg",
+					"RenderMarkdownH3Bg",
+					"RenderMarkdownH4Bg",
+					"RenderMarkdownH5Bg",
+					"RenderMarkdownH6Bg",
+				},
 			},
 			quote = {
 				enabled = true,
-				icon = "",
-				highlight = "RenderMarkdownQuote",
+				render_modes = false,
+				icon = "▋",
+				repeat_linebreak = true,
+				highlight = {
+					"RenderMarkdownQuote1",
+					"RenderMarkdownQuote2",
+					"RenderMarkdownQuote3",
+					"RenderMarkdownQuote4",
+					"RenderMarkdownQuote5",
+					"RenderMarkdownQuote6",
+				},
+				win_options = {
+					showbreak = {
+						default = "",
+						rendered = "  ",
+					},
+					breakindent = {
+						default = false,
+						rendered = true,
+					},
+					breakindentopt = {
+						default = "",
+						rendered = "",
+					},
+				},
 			},
 			code = {
+				language = true,
+				position = "left",
+				language_icon = true,
+				language_name = false,
 				enabled = true,
 				sign = false,
 				style = "full",
-				border = "thin",
+				border = "hide",
 				above = "",
 				language_border = "",
 				below = "",
