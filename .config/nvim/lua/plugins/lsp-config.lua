@@ -35,7 +35,7 @@ return {
 					"yamlls",
 				},
 				automatic_enable = {
-					exclude = { "lua_ls", "gopls" },
+					exclude = { "lua_ls", "gopls", "ruff", "pyright" },
 				},
 			})
 		end,

@@ -6,6 +6,9 @@ return {
 	dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" },
 	config = function()
 		require("render-markdown").setup({
+			anti_conceal = {
+				enabled = false,
+			},
 			heading = {
 				enabled = true,
 				sign = false,

@@ -38,25 +38,18 @@ vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- Move highlight text in visual mode with J and K
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
+vim.keymap.set("x", "K", ":m '<-2<CR>gv=gv", { silent = true })
+vim.keymap.set("x", "J", ":m '>+1<CR>gv=gv", { silent = true })
 
 -- Use C-c as Esc in inser mode
 vim.keymap.set("i", "<C-c>", "<Esc>")
 -- Disable "s" in normal mode
 vim.keymap.set("n", "s", "<Nop>", { noremap = true, silent = true })
-vim.keymap.set({ "n", "v" }, "K", function()
+vim.keymap.set("n", "K", function()
 	vim.lsp.buf.hover({
 		border = "rounded",
 	})
 end)
--- Autocommands
--- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
--- 	pattern = { "*.py", "*.lua", "*.sh" },
--- 	callback = function()
--- 		vim.lsp.buf.format({ timeout = 2000 })
--- 	end,
--- })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",

@@ -16,9 +16,9 @@ return {
 			highlight_headers = true,
 			show_help = false,
 			headers = {
-				user = "#  ", -- Header to use for user questions
-				assistant = "#  ", -- Header to use for AI answers
-				tool = "#  ", -- Header to use for tool calls
+				user = " ", -- Header to use for user questions
+				assistant = " ", -- Header to use for AI answers
+				tool = " ", -- Header to use for tool calls
 			},
 			separator = "───",
 		},
