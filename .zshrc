@@ -73,6 +73,8 @@ alias c="clear"
 ## kubectl
 alias k="kubectl"
 
+## tmux
+alias tmux="tmux -f ~/.config/tmux/tmux.conf"
 ## switcher
 alias s="switcher"
 
