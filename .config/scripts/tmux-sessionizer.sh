@@ -2,8 +2,10 @@
 
 # Use null-delimited output to handle spaces in names
 selected=$(
-  find "$HOME/code" "$HOME/dotfiles" -mindepth 1 -maxdepth 1 -type d -print0 | fzf --read0 --prompt="Select directory:"
+  find "$HOME/code" "$HOME/dotfiles" -mindepth 1 -maxdepth 1 -type d | sed -E "s|$HOME/||g" | fzf --prompt="Select directory:"
 )
+
+selected="$HOME/$selected"
 
 # Exit if nothing selected
 if [[ -z "$selected" ]]; then

@@ -61,6 +61,8 @@ setopt INC_APPEND_HISTORY
 export HISTTIMEFORMAT="[%F %T] "
 ## skip duplicates and show each command only once.
 setopt HIST_FIND_NO_DUPS
+## Use nvim to read man pages
+export MANPAGER="nvim +Man!"
 
 # aliases
 
@@ -74,7 +76,14 @@ alias c="clear"
 alias k="kubectl"
 
 ## tmux
-alias tmux="tmux -f ~/.config/tmux/tmux.conf"
+tmux() {
+  if [ $# -eq 0 ]; then
+    command tmux -f ~/.config/tmux/tmux.conf new-session -A -s tabletop
+  else
+    command tmux -f ~/.config/tmux/tmux.conf "$@"
+  fi
+}
+
 ## switcher
 alias s="switcher"
 
@@ -97,10 +106,6 @@ alias vim="nvim"
 
 ## chrome
 alias chrome="open -a \"Google Chrome\""
-
-## tmux
-alias tmat="tmux attach"
-alias tmls="tmux ls"
 
 # functions
 function ld() { grep "$1" ~/.ssh/config; } # search hosts in ssh config file

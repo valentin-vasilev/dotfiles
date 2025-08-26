@@ -2,6 +2,7 @@
 .config/wireshark
 .config/github-copilot
 .config/gh
+.config/gh-copilot
 .config/spaceship.zsh.zwc
 .config/k9s/benchmarks
 .config/k9s/clusters
