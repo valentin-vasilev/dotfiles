@@ -268,5 +268,11 @@ return {
 			{ "<leader>k", icon = " ", group = "keys" },
 			{ "<leader>ks", "<cmd>ShowkeysToggle<cr>", desc = "Toggle showkeys" },
 		})
+		wk.add({
+			{ "<leader>q", icon = "󱡠 ", desc = "Quickfix" },
+			{ "<leader>qt", "<cmd>Ctoggle<cr>", desc = "Quickfix toggle" },
+			{ "<leader>qn", "<cmd>cnext<cr>", desc = "Quickfix next" },
+			{ "<leader>qp", "<cmd>cprevious<cr>", desc = "Quickfix previous" },
+		})
 	end,
 }
