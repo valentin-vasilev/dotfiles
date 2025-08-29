@@ -5,13 +5,13 @@ selected=$(
   find "$HOME/code" "$HOME/dotfiles" -mindepth 1 -maxdepth 1 -type d | sed -E "s|$HOME/||g" | fzf --prompt="Select directory:"
 )
 
-selected="$HOME/$selected"
-
 # Exit if nothing selected
 if [[ -z "$selected" ]]; then
   tmux display-message -d 3000 "No directory selected."
   exit 0
 fi
+
+selected="$HOME/$selected"
 
 # basename + sanitize
 selected_name=$(basename "$selected")
