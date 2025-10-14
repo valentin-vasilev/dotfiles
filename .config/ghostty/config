@@ -18,9 +18,9 @@ window-padding-x = 5
 window-padding-y = 5
 window-padding-balance = true
 
-theme = "rose-pine-dawn"
+theme = Rose Pine Dawn
 
-background-opacity = 1
+background-opacity = 0.9
 background-blur-radius = 30
 
 grapheme-width-method = unicode
@@ -28,7 +28,5 @@ grapheme-width-method = unicode
 cursor-style = block
 cursor-style-blink = false
 mouse-hide-while-typing = true
-
-macos-icon = xray
 
 confirm-close-surface = false

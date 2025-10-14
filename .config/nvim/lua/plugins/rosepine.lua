@@ -82,6 +82,7 @@ return {
 
 				-- Markdown highlight palette
 				RenderMarkdownCode = { fg = "none", bg = "none", inherit = false },
+				RenderMarkdownCodeInline = { fg = "gold", bg = "gold", blend = 30, inherit = false },
 				Rm_RmCodeBorder_bg_as_fg = { fg = "none", bg = "none", inherit = false },
 
 				-- Navic highlight palette

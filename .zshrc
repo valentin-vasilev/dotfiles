@@ -113,6 +113,9 @@ export -f ld >/dev/null
 function hgrep() { fc -Dlim "*$@*" 1 } # search zsh history
 export -f hgrep >/dev/null
 
+# load ssh keys from keychain
+ssh-add --apple-load-keychain -q
+
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
 	yazi "$@" --cwd-file="$tmp"

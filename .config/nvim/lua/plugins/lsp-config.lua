@@ -65,22 +65,24 @@ return {
 		lazy = false,
 		event = { "BufReadPre", "BufNewFile", "BufEnter" },
 		config = function()
-			local lspconfig = require("lspconfig")
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-			lspconfig.bashls.setup({
+			vim.lsp.config("bashls", {
 				capabilities = capabilities,
 			})
+			vim.lsp.enable({ "bashls" })
 
-			lspconfig.dockerls.setup({
+			vim.lsp.config("dockerls", {
 				capabilities = capabilities,
 			})
+			vim.lsp.enable({ "dockerls" })
 
-			lspconfig.lua_ls.setup({
+			vim.lsp.config("luals", {
 				capabilities = capabilities,
 			})
+			vim.lsp.enable({ "luals" })
 
-			lspconfig.pyright.setup({
+			vim.lsp.config("pyright", {
 				capabilities = capabilities,
 				settings = {
 					pyright = {
@@ -95,16 +97,19 @@ return {
 					},
 				},
 			})
+			vim.lsp.enable({ "pyright" })
 
-			lspconfig.ruff.setup({
+			vim.lsp.config("ruff", {
 				capabilities = capabilities,
 			})
+			vim.lsp.enable({ "ruff" })
 
-			lspconfig.gopls.setup({
+			vim.lsp.config("gopls", {
 				capabilities = capabilities,
 			})
+			vim.lsp.enable({ "gopls" })
 
-			lspconfig.helm_ls.setup({
+			vim.lsp.config("helm_ls", {
 				settings = {
 					["helm-ls"] = {
 						yamlls = {
@@ -115,8 +120,9 @@ return {
 				filetypes = { "helm" },
 				root_dir = require("lspconfig.util").root_pattern("Chart.yaml"),
 			})
+			vim.lsp.enable({ "helm_ls" })
 
-			lspconfig.yamlls.setup({
+			vim.lsp.config("yamlls", {
 				settings = {
 					yaml = {
 						schemas = {
@@ -125,13 +131,15 @@ return {
 					},
 				},
 			})
+			vim.lsp.enable({ "yamlls" })
 
-			lspconfig.groovyls.setup({
+			vim.lsp.config("groovyls", {
 				capabilities = capabilities,
 				cmd = { "groovy-language-server" },
 				filetypes = { "groovy" },
 				root_dir = require("lspconfig.util").root_pattern("settings.gradle", "build.gradle", ".git"),
 			})
+			vim.lsp.enable({ "groovyls" })
 		end,
 	},
 }
