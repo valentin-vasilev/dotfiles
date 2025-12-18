@@ -167,6 +167,7 @@ export FZF_DEFAULT_OPTS="
   --pointer=' ' \
   --prompt='   ' \
   --marker='󰥱 ' \
+  --gutter=' ' \
   --color=fg:#575279 \
   --color=fg+:#907aa9 \
   --color=hl:#286983 \
