@@ -32,6 +32,7 @@ return {
 					"helm_ls",
 					"jsonls",
 					"lua_ls",
+					"terraformls",
 					"yamlls",
 				},
 				automatic_enable = {
@@ -49,11 +50,12 @@ return {
 			require("mason-tool-installer").setup({
 				ensure_installed = {
 					"black",
-					"ruff",
-					"stylua",
-					"shfmt",
 					"goimports",
 					"hadolint",
+					"ruff",
+					"shfmt",
+					"stylua",
+					"prettier",
 				},
 			})
 		end,
@@ -80,6 +82,11 @@ return {
 			vim.lsp.config("luals", {
 				capabilities = capabilities,
 			})
+
+			vim.lsp.config("terraformls", {
+				capabilities = capabilities,
+			})
+
 			vim.lsp.enable({ "luals" })
 
 			vim.lsp.config("pyright", {

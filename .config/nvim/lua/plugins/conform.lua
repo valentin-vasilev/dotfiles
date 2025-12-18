@@ -21,6 +21,9 @@ return {
 			markdown = { "prettier" },
 			python = { "ruff_format", "ruff_fix", "ruff_organize_imports" },
 			sh = { "shfmt" },
+			terraform = { "terraform_fmt" },
+			tf = { "terraform_fmt" },
+			["terraform-vars"] = { "terraform_fmt" },
 			-- yaml = { "prettier" },
 		},
 		format_on_save = {
