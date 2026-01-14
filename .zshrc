@@ -20,10 +20,13 @@ setopt HIST_FIND_NO_DUPS
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-export DICTIONARY_PATH=$HOME/Library/Spelling
+export DICTIONARY_PATH="$HOME/Library/Spelling"
 export MANPAGER="nvim +Man!"
 export EDITOR=nvim
-export GPG_TTY=$TTY
+export GPG_TTY="$TTY"
+export GOPATH="$HOME/go"
+export DOCKERPATH="/Applications/Docker.app/Contents/Resources/bin"
+export HDBCLIENTPATH="/Applications/sap/hdbclient"
 
 export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --no-init --window=-4'
 
@@ -33,7 +36,7 @@ export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-export PATH="${PATH}:/Applications/Docker.app/Contents/Resources/bin:/Applications/sap/hdbclient"
+export PATH="${PATH}:${DOCKERPATH}:${HDBCLIENTPATH}:${GOPATH}/bin"
 
 # ============================================================================
 # 4. SHELL INTEGRATIONS
@@ -178,6 +181,14 @@ function y() {
     builtin cd -- "$cwd"
   fi
   rm -f -- "$tmp"
+}
+
+function tmux() {
+  if [ $# -eq 0 ]; then
+    command tmux -f ~/.config/tmux/tmux.conf new-session -A -s tabletop
+  else
+    command tmux -f ~/.config/tmux/tmux.conf "$@"
+  fi
 }
 
 # ============================================================================
