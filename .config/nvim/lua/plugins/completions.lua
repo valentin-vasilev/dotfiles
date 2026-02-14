@@ -2,7 +2,7 @@ return {
 	"saghen/blink.cmp",
 	dependencies = {
 		"rafamadriz/friendly-snippets",
-		"giuxtaposition/blink-cmp-copilot",
+		"Kaiser-Yang/blink-cmp-avante",
 	},
 	version = "*",
 	---@module 'blink.cmp'
@@ -83,7 +83,7 @@ return {
 			},
 		},
 		sources = {
-			default = { "lsp", "copilot", "snippets", "path", "buffer" },
+			default = { "lsp", "avante", "snippets", "path", "buffer" },
 			per_filetype = {
 				markdown = { "path", "snippets", "buffer" },
 				yaml = { "path", "snippets", "buffer" },
@@ -113,12 +113,12 @@ return {
 						show_hidden_files_by_default = true,
 					},
 				},
-				copilot = {
-					name = "copilot",
-					enabled = true,
-					module = "blink-cmp-copilot",
-					score_offset = 25,
-					async = true,
+				avante = {
+					module = "blink-cmp-avante",
+					name = "Avante",
+					opts = {
+						-- options for blink-cmp-avante
+					},
 				},
 			},
 		},

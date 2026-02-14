@@ -106,48 +106,6 @@ return {
 			{ "<leader>gs", "<cmd>lua require('gitsigns').stage_hunk()<cr>", desc = "stage hunk" },
 			{ "<leader>gu", "<cmd>lua require('gitsigns').undo_stage_hunk()<cr>", desc = "undo stage hunk" },
 		})
-		-- copilot chat keymaps
-		wk.add({
-			{ "<leader>c", icon = " ", group = "copilot", mode = { "n", "v" } },
-			{ "<leader>cc", icon = "󰻞 ", group = "chat", mode = { "n", "v" } },
-			{
-				"<leader>cct",
-				"<cmd>CopilotChatToggle<cr>",
-				desc = "copilot chat toggle",
-			},
-			{
-				"<leader>ccs",
-				"<cmd>CopilotChatTests<cr>",
-				desc = "copilot chat generate tests",
-			},
-			{
-				"<leader>ccd",
-				"<cmd>CopilotChatDocs<cr>",
-				desc = "copilot chat add docs",
-				mode = { "n", "v" },
-			},
-			{
-				"<leader>cce",
-				"<cmd>CopilotChatExplain<cr>",
-				desc = "copilot chat explain code",
-				mode = { "n", "v" },
-			},
-			{
-				"<leader>cs",
-				"<cmd>Copilot status<cr>",
-				desc = "copilot status",
-			},
-			{
-				"<leader>ce",
-				"<cmd>Copilot enable<cr>",
-				desc = "copilot enable",
-			},
-			{
-				"<leader>cd",
-				"<cmd>Copilot disable<cr>",
-				desc = "copilot disable",
-			},
-		})
 		-- telescope search keymaps
 		wk.add({
 			{ "<leader>s", icon = " ", group = "search" },
@@ -273,6 +231,58 @@ return {
 			{ "<leader>qt", "<cmd>Ctoggle<cr>", desc = "Quickfix toggle" },
 			{ "<leader>qn", "<cmd>cnext<cr>", desc = "Quickfix next" },
 			{ "<leader>qp", "<cmd>cprevious<cr>", desc = "Quickfix previous" },
+		})
+		-- avante keymaps
+		wk.add({
+			{ "<leader>a", icon = "󰚩 ", group = "avante" },
+			{
+				"<leader>aa",
+				function()
+					require("avante.api").ask()
+				end,
+				mode = { "n", "v" },
+				desc = "avante ask",
+			},
+			{
+				"<leader>ae",
+				function()
+					require("avante.api").edit()
+				end,
+				mode = "v",
+				desc = "avante edit",
+			},
+			{
+				"<leader>ar",
+				function()
+					require("avante.api").refresh()
+				end,
+				mode = "n",
+				desc = "avante refresh",
+			},
+			{
+				"<leader>af",
+				function()
+					require("avante.api").focus()
+				end,
+				mode = "n",
+				desc = "avante focus",
+			},
+			{
+				"<leader>at",
+				function()
+					require("avante.api").toggle()
+				end,
+				mode = "n",
+				desc = "avante toggle",
+			},
+			{
+				"<leader>az",
+				function()
+					require("avante.api").zen_mode()
+				end,
+				mode = "n",
+				desc = "avante zen mode",
+			},
 		})
 	end,
 }

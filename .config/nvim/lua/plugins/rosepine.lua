@@ -180,6 +180,26 @@ return {
 				MiniStatuslineDevinfo = { bg = "highlight_med", inherit = false },
 				MiniStatuslineFileinfo = { bg = "highlight_med", inherit = false },
 				MiniStatuslineFilename = { bg = "highlight_med", inherit = false },
+
+				-- Avante highlight palette
+				AvanteTitle = { fg = "base", bg = "pine", inherit = false },
+				AvanteReversedTitle = { fg = "pine", bg = "none", inherit = false },
+				AvanteSubtitle = { fg = "base", bg = "iris", inherit = false },
+				AvanteReversedSubtitle = { fg = "iris", bg = "none", inherit = false },
+				AvanteThirdTitle = { fg = "base", bg = "foam", inherit = false },
+				AvanteReversedThirdTitle = { fg = "foam", bg = "none", inherit = false },
+				AvanteConflictCurrent = { fg = "none", bg = "pine", blend = 20, inherit = false },
+				AvanteConflictIncoming = { fg = "none", bg = "foam", blend = 20, inherit = false },
+				AvanteConflictCurrentLabel = { fg = "base", bg = "pine", inherit = false },
+				AvanteConflictIncomingLabel = { fg = "base", bg = "foam", inherit = false },
+				AvanteConflictAncestor = { fg = "none", bg = "gold", blend = 20, inherit = false },
+				AvanteConflictAncestorLabel = { fg = "base", bg = "gold", inherit = false },
+				AvantePopupHint = { fg = "iris", bg = "none", inherit = false },
+				AvanteInlineHint = { fg = "muted", bg = "none", italic = true, inherit = false },
+				AvanteSidebarWinBar = { fg = "pine", bg = "none", inherit = false },
+				AvanteSidebarWinBarNC = { fg = "muted", bg = "none", inherit = false },
+				AvanteTaskCompleted = { fg = "base", bg = "pine", inherit = false },
+				AvanteButtonDefaultHover = { fg = "base", bg = "love", inherit = false },
 			},
 		})
 		vim.cmd.colorscheme("rose-pine")
