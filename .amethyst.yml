@@ -35,14 +35,12 @@ mod2:
     - control
 
 focus-screen-cw:
-    - option
-    - shift
-    - k
+    mod: mod1
+    key: k
 
 focus-screen-ccw:
-    - option
-    - shift
-    - j
+    mod: mod1
+    key: j
 
 # mouse configuration
 mouse-follows-focus: false
