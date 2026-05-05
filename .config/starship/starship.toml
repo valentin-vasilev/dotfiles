@@ -1,0 +1,132 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+format = """
+$username\
+$hostname\
+$directory\
+$kubernetes\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$docker_context\
+$golang\
+$helm\
+$python\
+$terraform\
+$cmd_duration\
+$package \
+$line_break\
+$shell\
+$character
+"""
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Increase default timeout to support long running commands
+command_timeout = 1000
+
+palette = "rose_pine_dawn"
+
+# Rose Pine Dawn palette
+[palettes.rose_pine_dawn]
+base    = "#faf4ed"
+surface = "#fffaf3"
+overlay = "#f2e9e1"
+muted   = "#9893a5"
+subtle  = "#797593"
+text    = "#575279"
+love    = "#b4637a"
+gold    = "#ea9d34"
+rose    = "#d7827e"
+pine    = "#286983"
+foam    = "#56949f"
+iris    = "#907aa9"
+leaf    = "#6d8f89"
+
+[c]
+format = '[ $symbol$name $version ]($style)'
+detect_extensions = ['c', 'h']
+symbol = ' '
+style = 'bold bg:leaf fg:base'
+
+[character]
+success_symbol = '[❯](bold text)'
+error_symbol = '[❯](bold love)'
+
+[cmd_duration]
+min_time = 2_000
+format = '[ 󰥔 $duration ]($style)'
+style = 'bold bg:gold fg:base'
+
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+home_symbol = '󰟒 '
+style = 'bold bg:love fg:base'
+read_only = ''
+read_only_style = 'bold love'
+format = '[ $path ]($style)[$read_only]($read_only_style)'
+
+[docker_context]
+format = '[$symbol$context]($style) '
+symbol = ' '
+only_with_files = true
+detect_files = ['compose.yml', 'compose.yaml', 'docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
+style = 'bold text'
+
+[git_branch]
+format = '[ $symbol$branch(:$remote_branch) ]($style)'
+symbol = ' '
+style = 'bold bg:pine fg:base'
+
+[git_status]
+format = '[  /$all_status$ahead_behind ]($style)'
+ahead = ' '
+behind = ' '
+untracked = ' '
+up_to_date = ' '
+modified = ' '
+staged = ' '
+renamed = ' '
+deleted = ' '
+stashed = ' '
+style = 'bold bg:pine fg:base'
+
+[golang]
+format = '[ $symbol($version )]($style)'
+version_format = 'v${raw}'
+symbol = ' '
+style = 'bold bg:leaf fg:base'
+
+[helm]
+symbol = ' '
+format = '[ $symbol$version]($style)'
+style = 'bold bg:foam fg:base'
+
+[kubernetes]
+symbol = ' '
+style = 'bold bg:text fg:base'
+format = '[ $symbol$context( \($namespace\)) ]($style)'
+disabled = false
+
+[[kubernetes.contexts]]
+context_pattern = "shoot--(?P<project>[\\w-]+)--prod-(?P<cluster>[\\w-]+)"
+context_alias = "$project/$cluster"
+
+[[kubernetes.contexts]]
+# garden-hc-dev--i753294-haas-external -> i753294/haas
+context_pattern = "garden-[\\w-]+--(?P<project>[\\w]+)-(?P<cluster>[\\w]+)-external"
+context_alias = "$project/$cluster"
+
+[package]
+symbol = ' '
+format = '[ $symbol$version ]($style) '
+style = 'bold bg:muted fg:base'
+
+[python]
+format = '[ $symbol$pyenv_prefix($version)(:$virtualenv) ]($style)'
+version_format = 'v${raw}'
+symbol = ' '
+style = 'bold bg:leaf fg:base'
