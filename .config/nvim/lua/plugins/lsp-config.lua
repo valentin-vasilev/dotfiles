@@ -25,6 +25,7 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"bashls",
+					"clangd",
 					"docker_compose_language_service",
 					"dockerls",
 					"golangci_lint_ls",
@@ -57,6 +58,7 @@ return {
 					"shfmt",
 					"stylua",
 					"prettier",
+					"clang-format",
 				},
 			})
 		end,
@@ -116,6 +118,11 @@ return {
 				capabilities = capabilities,
 			})
 			vim.lsp.enable({ "gopls" })
+
+			vim.lsp.config("clangd", {
+				capabilities = capabilities,
+			})
+			vim.lsp.enable({ "clangd" })
 
 			vim.lsp.config("golangci_lint_ls", {
 				capabilities = capabilities,

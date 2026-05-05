@@ -50,12 +50,33 @@ return {
 			{ "<leader>yr", "<cmd>CopyRegexMatchesToRegister<cr>", desc = "yank regex search matches to register" },
 		})
 		-- file explorer keymaps
+		local netrw_win = nil
+
+		local function toggle_netrw_left()
+			-- If netrw is already open and valid, close it
+			if netrw_win and vim.api.nvim_win_is_valid(netrw_win) then
+				vim.api.nvim_win_close(netrw_win, true)
+				netrw_win = nil
+				return
+			end
+
+			-- Open vertical split on the far left
+			vim.cmd("topleft vsplit")
+			vim.cmd("vertical resize 35")
+
+			-- Open netrw in the split
+			vim.cmd("Explore")
+
+			-- Store the window id
+			netrw_win = vim.api.nvim_get_current_win()
+		end
+
 		wk.add({
-			{ "<leader>e", icon = " ", group = "explorer" },
-			{ "<leader>ec", "<cmd>NvimTreeCollapse<cr>", desc = "explorer collapse" },
-			{ "<leader>ee", "<cmd>NvimTreeToggle<cr>", desc = "explorer toggle" },
-			{ "<leader>ef", "<cmd>NvimTreeFindFile<cr>", desc = "explorer find file" },
-			{ "<leader>er", "<cmd>NvimTreeRefresh<cr>", desc = "explorer refresh" },
+			{
+				"<leader>e",
+				toggle_netrw_left,
+				desc = "Toggle Netrw Explorer",
+			},
 		})
 		-- lsp keymaps
 		wk.add({
@@ -231,58 +252,6 @@ return {
 			{ "<leader>qt", "<cmd>Ctoggle<cr>", desc = "Quickfix toggle" },
 			{ "<leader>qn", "<cmd>cnext<cr>", desc = "Quickfix next" },
 			{ "<leader>qp", "<cmd>cprevious<cr>", desc = "Quickfix previous" },
-		})
-		-- avante keymaps
-		wk.add({
-			{ "<leader>a", icon = "󰚩 ", group = "avante" },
-			{
-				"<leader>aa",
-				function()
-					require("avante.api").ask()
-				end,
-				mode = { "n", "v" },
-				desc = "avante ask",
-			},
-			{
-				"<leader>ae",
-				function()
-					require("avante.api").edit()
-				end,
-				mode = "v",
-				desc = "avante edit",
-			},
-			{
-				"<leader>ar",
-				function()
-					require("avante.api").refresh()
-				end,
-				mode = "n",
-				desc = "avante refresh",
-			},
-			{
-				"<leader>af",
-				function()
-					require("avante.api").focus()
-				end,
-				mode = "n",
-				desc = "avante focus",
-			},
-			{
-				"<leader>at",
-				function()
-					require("avante.api").toggle()
-				end,
-				mode = "n",
-				desc = "avante toggle",
-			},
-			{
-				"<leader>az",
-				function()
-					require("avante.api").zen_mode()
-				end,
-				mode = "n",
-				desc = "avante zen mode",
-			},
 		})
 	end,
 }

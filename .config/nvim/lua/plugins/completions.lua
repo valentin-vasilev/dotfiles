@@ -2,7 +2,6 @@ return {
 	"saghen/blink.cmp",
 	dependencies = {
 		"rafamadriz/friendly-snippets",
-		"Kaiser-Yang/blink-cmp-avante",
 	},
 	version = "*",
 	---@module 'blink.cmp'
@@ -83,7 +82,7 @@ return {
 			},
 		},
 		sources = {
-			default = { "lsp", "avante", "snippets", "path", "buffer" },
+			default = { "lsp", "snippets", "path", "buffer" },
 			per_filetype = {
 				markdown = { "path", "snippets", "buffer" },
 				yaml = { "path", "snippets", "buffer" },
@@ -111,13 +110,6 @@ return {
 							return vim.fn.expand(("#%d:p:h"):format(context.bufnr))
 						end,
 						show_hidden_files_by_default = true,
-					},
-				},
-				avante = {
-					module = "blink-cmp-avante",
-					name = "Avante",
-					opts = {
-						-- options for blink-cmp-avante
 					},
 				},
 			},

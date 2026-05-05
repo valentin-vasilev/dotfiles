@@ -15,10 +15,11 @@ return {
 	---@module "conform"
 	opts = {
 		formatters_by_ft = {
+			c = { "clang-format" },
 			go = { "gofmt", "goimports" },
 			json = { "prettier" },
 			lua = { "stylua" },
-			markdown = { "prettier" },
+			-- markdown = { "prettier" },
 			python = { "ruff_format", "ruff_fix", "ruff_organize_imports" },
 			sh = { "shfmt" },
 			terraform = { "terraform_fmt" },

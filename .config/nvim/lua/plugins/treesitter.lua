@@ -1,78 +1,51 @@
 return {
-	{ -- [[ Install and configure treesitter ]]
-		-- Highlight, edit, and navigate code
+	{
 		"nvim-treesitter/nvim-treesitter",
+		branch = "main",
+		lazy = false,
 		build = ":TSUpdate",
-		event = { "BufReadPre", "BufNewFile" },
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter-textobjects",
-		},
 		config = function()
-			local config = require("nvim-treesitter.configs")
-			config.setup({
-				ensure_installed = {
-					"bash",
-					"diff",
-					"dockerfile",
-					"editorconfig",
-					"helm",
-					"go",
-					"json",
-					"lua",
-					"markdown_inline",
-					"python",
-					"regex",
-					"terraform",
-					"vim",
-					"vimdoc",
-					"yaml",
-				},
-				sync_install = false,
-				auto_install = true,
-				modules = {},
-				highlight = { enable = true },
-				indent = { enable = true },
-				incremental_selection = {
-					enable = true,
-					keymaps = {
-						init_selection = "<C-n>",
-						node_incremental = "<C-n>",
-						scope_incremental = "<C-s>",
-						node_decremental = "<C-r>",
-					},
-				},
-				font = {
-					enable = true,
-				},
-			})
+			require("nvim-treesitter").setup()
+			require("nvim-treesitter").install({
+				"bash", "diff", "dockerfile", "editorconfig", "helm",
+				"go", "json", "lua", "markdown_inline", "python",
+				"regex", "terraform", "vim", "vimdoc", "yaml",
+			}):wait(300000)
 		end,
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",
-		lazy = true,
+		branch = "main",
+		lazy = false,
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		init = function()
+			vim.g.no_plugin_maps = true
+		end,
 		config = function()
-			require("nvim-treesitter.configs").setup({
-				textobjects = {
-					select = {
-						enable = true,
-						lookahead = true,
-						keymaps = {
-							["a="] = { query = "@assignment.outer", desc = "select outer part of an assignment" },
-							["i="] = { query = "@assignment.inner", desc = "select inner part of an assignment" },
-							["l="] = { query = "@assignment.lhs", desc = "select left hand side of an assignment" },
-							["r="] = { query = "@assignment.rhs", desc = "select right hand side of an assignment" },
-							["ai"] = { query = "@conditional.outer", desc = "select outer part of a conditional" },
-							["ii"] = { query = "@conditional.inner", desc = "select inner part of a conditional" },
-							["af"] = { query = "@function.outer", desc = "select outer part of a function definition" },
-							["if"] = { query = "@function.inner", desc = "select inner part of a function definition" },
-							["ac"] = { query = "@class.outer", desc = "select outer part of a class definition" },
-							["ic"] = { query = "@class.inner", desc = "select inner part of a class definition" },
-							["al"] = { query = "@loop.outer", desc = "select outer part of a loop" },
-							["il"] = { query = "@loop.inner", desc = "select inner part of a loop" },
-						},
-					},
-				},
+			require("nvim-treesitter-textobjects").setup({
+				select = { lookahead = true },
 			})
+
+			local select = require("nvim-treesitter-textobjects.select")
+			local keymaps = {
+				["a="] = "@assignment.outer",
+				["i="] = "@assignment.inner",
+				["l="] = "@assignment.lhs",
+				["r="] = "@assignment.rhs",
+				["ai"] = "@conditional.outer",
+				["ii"] = "@conditional.inner",
+				["af"] = "@function.outer",
+				["if"] = "@function.inner",
+				["ac"] = "@class.outer",
+				["ic"] = "@class.inner",
+				["al"] = "@loop.outer",
+				["il"] = "@loop.inner",
+			}
+			for lhs, query in pairs(keymaps) do
+				vim.keymap.set({ "x", "o" }, lhs, function()
+					select.select_textobject(query, "textobjects")
+				end)
+			end
 		end,
 	},
 }
