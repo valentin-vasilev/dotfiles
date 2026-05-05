@@ -27,6 +27,8 @@ export GPG_TTY="$TTY"
 export GOPATH="$HOME/go"
 export DOCKERPATH="/Applications/Docker.app/Contents/Resources/bin"
 export HDBCLIENTPATH="/Applications/sap/hdbclient"
+export LOCALBIN="$HOME/.local/bin"
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 
 export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --no-init --window=-4'
 
@@ -36,7 +38,7 @@ export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-export PATH="${PATH}:${DOCKERPATH}:${HDBCLIENTPATH}:${GOPATH}/bin"
+export PATH="${PATH}:${DOCKERPATH}:${HDBCLIENTPATH}:${GOPATH}/bin:${LOCALBIN}"
 
 # ============================================================================
 # 4. SHELL INTEGRATIONS
@@ -86,7 +88,8 @@ zvm_after_init_commands+=(
 )
 
 # Prompt
-source "/opt/homebrew/opt/spaceship/spaceship.zsh"
+# source "/opt/homebrew/opt/spaceship/spaceship.zsh"
+eval "$(starship init zsh)"
 
 # ============================================================================
 # 7. KEYBINDINGS (after vi-mode, before FZF)
