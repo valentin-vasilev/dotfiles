@@ -69,3 +69,6 @@ vim.g.netrw_liststyle = 3
 vim.g.netrw_browse_split = 0
 vim.g.netrw_winsize = 25
 vim.g.netrw_browse_split = 4
+
+-- Spell check language (spell itself is enabled per-filetype in autocmd.lua)
+vim.opt.spelllang = "en_us"
