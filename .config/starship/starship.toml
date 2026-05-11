@@ -44,12 +44,13 @@ pine    = "#286983"
 foam    = "#56949f"
 iris    = "#907aa9"
 leaf    = "#6d8f89"
+hl_high = "#cecacd"
 
 [c]
 format = '[ $symbol$name $version ]($style)'
 detect_extensions = ['c', 'h']
 symbol = ' '
-style = 'bold bg:leaf fg:base'
+style = 'bold bg:hl_high fg:text'
 
 [character]
 success_symbol = '[❯](bold text)'
@@ -58,28 +59,28 @@ error_symbol = '[❯](bold love)'
 [cmd_duration]
 min_time = 2_000
 format = '[ 󰥔 $duration ]($style)'
-style = 'bold bg:gold fg:base'
+style = 'bold bg:hl_high fg:text'
 
 [directory]
 truncation_length = 3
 truncate_to_repo = true
 home_symbol = '󰟒 '
-style = 'bold bg:love fg:base'
+style = 'bold bg:hl_high fg:text'
 read_only = ''
 read_only_style = 'bold love'
 format = '[ $path ]($style)[$read_only]($read_only_style)'
 
 [docker_context]
-format = '[$symbol$context]($style) '
+format = '[ $symbol ($context) ]($style) '
 symbol = ' '
 only_with_files = true
 detect_files = ['compose.yml', 'compose.yaml', 'docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
-style = 'bold text'
+style = 'bold bg:hl_high fg:text'
 
 [git_branch]
 format = '[ $symbol$branch(:$remote_branch) ]($style)'
 symbol = ' '
-style = 'bold bg:pine fg:base'
+style = 'bold bg:hl_high fg:text'
 
 [git_status]
 format = '[  /$all_status$ahead_behind ]($style)'
@@ -92,22 +93,22 @@ staged = ' '
 renamed = ' '
 deleted = ' '
 stashed = ' '
-style = 'bold bg:pine fg:base'
+style = 'bold bg:hl_high fg:text'
 
 [golang]
-format = '[ $symbol($version )]($style)'
+format = '[ $symbol($version ) ]($style)'
 version_format = 'v${raw}'
 symbol = ' '
-style = 'bold bg:leaf fg:base'
+style = 'bold bg:hl_high fg:text'
 
 [helm]
 symbol = ' '
-format = '[ $symbol$version]($style)'
+format = '[ $symbol$version ]($style)'
 style = 'bold bg:foam fg:base'
 
 [kubernetes]
 symbol = ' '
-style = 'bold bg:text fg:base'
+style = 'bold bg:hl_high fg:text'
 format = '[ $symbol$context( \($namespace\)) ]($style)'
 disabled = false
 
@@ -123,10 +124,17 @@ context_alias = "$project/$cluster"
 [package]
 symbol = ' '
 format = '[ $symbol$version ]($style) '
-style = 'bold bg:muted fg:base'
+style = 'bold bg:hl_high fg:text'
 
 [python]
 format = '[ $symbol$pyenv_prefix($version)(:$virtualenv) ]($style)'
 version_format = 'v${raw}'
 symbol = ' '
-style = 'bold bg:leaf fg:base'
+style = 'bold bg:hl_high fg:text'
+
+# ~/.config/starship.toml
+
+[terraform]
+symbol = ' '
+style = 'bold bg:hl_high fg:text'
+format = '[ $symbol($version) ]($style) '
