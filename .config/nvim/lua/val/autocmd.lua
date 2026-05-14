@@ -1,5 +1,5 @@
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-	pattern = "*/templates/*.yaml",
+	pattern = { "*/templates/*.yaml", "*/templates/*.tpl", "*.tpl", "helmfile*.yaml" },
 	callback = function(args)
 		local fname = vim.fn.fnamemodify(args.file, ":t")
 		if fname:match("workflow") then
@@ -7,6 +7,13 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 		else
 			vim.bo.filetype = "helm"
 		end
+	end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "helm",
+	callback = function()
+		vim.treesitter.start(0, "yaml")
 	end,
 })
 

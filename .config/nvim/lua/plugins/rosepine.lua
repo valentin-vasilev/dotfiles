@@ -60,7 +60,7 @@ return {
 				-- Normal mode highlight palette
 				Normal = { bg = "none", inherit = false },
 				NormalFloat = { bg = "none", inherit = false },
-				ColorColumn = { bg = "rose", inherit = false },
+				ColorColumn = { bg = "rose", blend = 20, inherit = false },
 				WinBar = { bg = "none", inherit = false },
 				WinBarNC = { bg = "none", inherit = false },
 
@@ -137,6 +137,8 @@ return {
 				NeogitDiffAdd = { link = "DiffAdd" },
 				NeogitDiffContext = { bg = "none" },
 				NeogitDiffContextHighlight = { bg = "none" },
+				NeogitDiffAddInLine = { link = "DiffAdd", blend = 40 },
+				NeogitDiffDeleteInLine = { link = "DiffDelete" },
 
 				-- Diff highlight palette
 				DiffAdd = { fg = "pine", bg = "pine", blend = 20, inherit = false },
