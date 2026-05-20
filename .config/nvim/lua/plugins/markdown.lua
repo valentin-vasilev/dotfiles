@@ -12,8 +12,8 @@ return {
 			heading = {
 				enabled = true,
 				sign = false,
-				icons = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 " },
-				signs = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 " },
+				icons = { " ", " ", " ", " " },
+				signs = { " 󰎤 ", " 󰎧 ", " 󰎪 ", " 󰎭 " },
 				backgrounds = {
 					"RenderMarkdownH1Bg",
 					"RenderMarkdownH2Bg",

@@ -11,6 +11,7 @@ return {
 			{
 				"nvim-telescope/telescope-live-grep-args.nvim",
 			},
+			"nvim-tree/nvim-web-devicons",
 		},
 		config = function()
 			telescope.setup({
